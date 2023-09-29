@@ -88,7 +88,7 @@ width:200px"
                       
                       tabPanel(title=h5("Rede de coautorias",style='color:black;'),
                                
-                               conditionalPanel("input.runmodel==1",
+                               conditionalPanel("input.runmodel!=0",
                                                 column(h3(textOutput("erro"),
                                                           style="background-color:#99c794;
 width:300px;
