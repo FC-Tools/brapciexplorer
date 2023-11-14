@@ -1,3 +1,5 @@
+#Esta versão do BRAPCI Explorer utiliza o método de web scraping para extração de dados da BRAPCI (Base de Dados Referencial de Artigos de Periódicos em Ciência da Informação)
+
 #Instale os pacotes se necessário
 
 #install.packages(rvest)
