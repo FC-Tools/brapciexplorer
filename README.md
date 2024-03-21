@@ -15,5 +15,5 @@ O Brapci Explorer é um ambiente web que permite realizar análises bibliométri
 7. O Gráfico de barras apresenta os anos mais produtivos e o download dos dados também é realizado no formato .txt.
 
 - Web-app em funcionamento em: https://fctools.shinyapps.io/brapciexplorer
-- Leia o artigo  de apresentaçção do Brapci Explorer: https://periodicos.sbu.unicamp.br/ojs/index.php/rdbci/article/download/8674652/32840
+- Leia o artigo  de apresentação do Brapci Explorer: https://periodicos.sbu.unicamp.br/ojs/index.php/rdbci/article/download/8674652/32840
 - Contato: brapciexplorer@gmail.com
