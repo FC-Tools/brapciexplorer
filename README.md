@@ -10,7 +10,7 @@ O Brapci Explorer é um ambiente web que permite realizar análises bibliométri
 
 5. A aba de Autores mais produtivos apresenta uma tabela com a frequência dos autores. Além de apresentar o Total de autores distintos, o Índice de coautoria e a Média de documetntos. Os dados podem ser baixados no formato .txt.
 
-6. As Fontes mais produtivas também são apresentadas em uma tabela, allém dos dados das Fontes distintas e a Média de documentos por fonte. O donwload dos dados é realizado no formato.txt.
+6. As Fontes mais produtivas também são apresentadas em uma tabela, além dos dados das Fontes distintas e a Média de documentos por fonte. O donwload dos dados é realizado no formato.txt.
 
 7. O Gráfico de barras apresenta os anos mais produtivos e o download dos dados também é realizado no formato .txt.
 
