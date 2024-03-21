@@ -1,4 +1,4 @@
-![brapciex2](https://github.com/FC-Tools/brapciexplorer/assets/145784596/53d8b97f-4b85-4403-830d-441b748e07be)
+![brapciex3](https://github.com/FC-Tools/brapciexplorer/assets/145784596/a2f4d796-0499-4e30-b64a-42aad42b8031)
 
 O Brapci Explorer é um ambiente web que permite realizar análises bibliométricas, a partir da requisição de dados via API da base de dados da BRAPCI, ampliando e estruturando a visualização dos dados indexados. 
 Os usuários podem realizar buscas e obter a visualização dos dados categorizados em Redes de coautorias, Autores mais produtivos, Fontes mais orodutivas e Anos mais produtivos.
