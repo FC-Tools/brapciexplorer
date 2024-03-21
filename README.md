@@ -8,7 +8,7 @@ O Brapci Explorer é um ambiente web que permite realizar análises bibliométri
 
 4. Na visulização de Rede de Coautorias é possível selecionar o nome de um dos autores (nó da rede), permitindo assim que os usuários façam intervenções na rede. Ainda é possível fazer o download da rede nos formatos .net, .txt. e .html.
 
-5. A aba de Autores mais produtivos apresenta uma tabela com a frequência dos autores. Além de apresentar o Total de autores distintos, o Índice de coautoria e a Média de documetntos. Os dados podem ser baixados no formato .txt.
+5. A aba de Autores mais produtivos apresenta uma tabela com a frequência dos autores. Além de apresentar o Total de autores distintos, o Índice de coautoria e a Média de documentos. Os dados podem ser baixados no formato .txt.
 
 6. As Fontes mais produtivas também são apresentadas em uma tabela, além dos dados das Fontes distintas e a Média de documentos por fonte. O donwload dos dados é realizado no formato.txt.
 
