@@ -51,6 +51,8 @@ theme_aas <-create_theme(
 
 ui <- fluidPage(
   
+  tags$head(includeHTML("GA.html")),
+  
   dashboardPage(
     
     dashboardHeader(disable = TRUE),
@@ -63,17 +65,68 @@ ui <- fluidPage(
       
       textInput("query_aux", "Busca:", "Insira um termo de busca",),
       
-      selectInput("ano_1", "Ano inicial:", c("1960", "1961", "1962", "1963", "1964", "1965", "1966", "1967", "1968", "1969", "1970", "1971","1972", "1973", "1974", "1975", "1976", "1977", "1978", "1979", "1980", "1981", "1982", "1983", "1984", "1985", "1986", "1987", "1988", "1989", "1990", "1991", "1992", "1993", "1994", "1995", "1996", "1997", "1998", "1999", "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024")),
+      selectInput("campo", "Campos:", c("Todos os campos"="FL", "Título"="TI", "Resumo"="AB","Palavra-chave"="KW", "Autor"="AU")),
       
-      selectInput("ano_2", "Ano final:", c("2024","2023", "2022", "2021", "2020", "2019", "2018", "2017", "2016", "2015", "2014", "2013", "2012", "2011", "2010", "2009", "2008", "2007", "2006", "2005", "2004", "2003", "2002", "2001", "2000", "1999", "1998", "1997", "1996", "1995", "1994", "1993", "1992", "1991", "1990", "1989", "1988", "1987", "1986", "1985", "1984", "1983", "1982", "1981", "1980", "1979", "1978", "1977", "1976", "1975", "1974", "1973", "1972","1971", "1970", "1969", "1968", "1967", "1966", "1965", "1964", "1963", "1962", "1961", "1960")),
+      selectInput("ano_1", "Ano inicial:", c("1960", "1961", "1962", "1963", "1964", "1965", "1966", "1967", "1968", "1969", "1970", "1971","1972", "1973", "1974", "1975", "1976", "1977", "1978", "1979", "1980", "1981", "1982", "1983", "1984", "1985", "1986", "1987", "1988", "1989", "1990", "1991", "1992", "1993", "1994", "1995", "1996", "1997", "1998", "1999", "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024","2025")),
+      
+      selectInput("ano_2", "Ano final:", c("2025","2024","2023", "2022", "2021", "2020", "2019", "2018", "2017", "2016", "2015", "2014", "2013", "2012", "2011", "2010", "2009", "2008", "2007", "2006", "2005", "2004", "2003", "2002", "2001", "2000", "1999", "1998", "1997", "1996", "1995", "1994", "1993", "1992", "1991", "1990", "1989", "1988", "1987", "1986", "1985", "1984", "1983", "1982", "1981", "1980", "1979", "1978", "1977", "1976", "1975", "1974", "1973", "1972","1971", "1970", "1969", "1968", "1967", "1966", "1965", "1964", "1963", "1962", "1961", "1960")),
       
       actionButton("runmodel", "Buscar",
                    style=
                      "background-color:#0062cc;
 color:#fff;
 margin-top:30px;
+margin-bottom:30px;
 width:200px"
-      )),
+      ),
+      
+      div(
+        fluidPage(
+          tags$a(href="https://bit.ly/brapciexplorer", "Artigo BRAPCI Explorer",
+                 style = "margin-top:10px;
+               margin-left:15px; 
+               color:#0062cc; 
+               text-align:center")),
+      ),
+      
+      div(
+        fluidPage(
+          tags$a(href="https://github.com/FC-Tools/brapciexplorer/", "Código  e Instruções",
+                 style = "margin-top:30px;
+                 margin-left:15px; 
+               color:#0062cc; 
+               text-align:center")),
+      ),
+      
+      div(
+        h6("CONTATO: brapciexplorer@gmail.com",
+           style=
+             "margin-left:15px;
+           color:#737070;")
+      ),
+      
+      
+      
+      
+      div(
+        h6("DESENVOLVIDO POR:
+             Rafael Gutierres Castanha, Francielle Franco",
+           style=
+             "margin-left:15px;
+           color:#737070;")
+      ),
+      
+      div(
+        h6("ATUALIZADO EM: 03/2024",
+           style=
+             "margin-left:15px;
+          color:#737070;
+           margin-right:15px;
+           ")
+      )
+      
+      
+    ),
     
     dashboardBody(use_theme(theme_aas),
                   
@@ -242,10 +295,11 @@ server <- function(input, output){
     query_1<-gsub(" ","+",query)
     y1<-input$ano_1
     y2<-input$ano_2
+    field<-input$campo
     
 #BUSCA PELO TOTAL    
     
-    page1<-paste0("https://cip.brapci.inf.br/api/brapci/search/v1?q=", query_1, "&di=", y1, "&df=", y2, "&start=") 
+    page1<-paste0("https://cip.brapci.inf.br/api/brapci/search/v1?q=", query_1, "&di=", y1, "&df=", y2, "&field=", field, "&start=") 
     
     data<-read_json(page1)
     total_busca<-data$total # Se o total for zero, erro de busca
@@ -257,13 +311,13 @@ server <- function(input, output){
     
 if (total_busca!=0) { 
       
-page1<-paste0("https://cip.brapci.inf.br/api/brapci/search/v1?q=", query_1, "&di=", y1, "&df=", y2, "&start=", s[i])
+page1<-paste0("https://cip.brapci.inf.br/api/brapci/search/v1?q=", query_1, "&di=", y1, "&df=", y2, "&field=", field, "&start=", s[i])
   
 
 
 for (i in 1:length(s)) {
     
-page1[i]<-paste0("https://cip.brapci.inf.br/api/brapci/search/v1?q=", query_1, "&di=", y1, "&df=", y2, "&start=", s[i])
+page1[i]<-paste0("https://cip.brapci.inf.br/api/brapci/search/v1?q=", query_1, "&di=", y1, "&df=", y2, "&field=", field, "&start=", s[i])
     
 } 
 
