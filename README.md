@@ -4,7 +4,7 @@ O Brapci Explorer é um ambiente web que permite realizar análises bibliométri
 
 1. Insira um termo de busca no campo indicado;
 2. Selecione em quais campos a busca será realizada;
-3. Defina o período no qual a busca serárealizada;
+3. Defina o período no qual a busca será realizada;
 
 4. Na visulização de Rede de Coautorias é possível selecionar o nome de um dos autores (nó da rede), permitindo assim que os usuários façam intervenções na rede. Ainda é possível fazer o download da rede nos formatos .net, .txt. e .html.
 
